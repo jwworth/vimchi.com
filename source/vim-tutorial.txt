@@ -27,32 +27,39 @@ gg - returns you to the beginning of the file.
 
 Start each excersize below by navigating to the start of the line(0) you would like to edit.
 
+Save early, save often.  Use the write command in command mode to save this file (:write or :w)
+
 **********NAVIGATION**********
 
 1. Edit the below quote using home row keys(hjkl) and insert(i).
 
 “This will be a day long remembered. It has seen the end of, and will soon see the end of the rebellion.”
-SHOULD BE: “This will be a day long remembered. It has seen the end of Kenobi, and will soon see the end of the rebellion.”
+SHOULD BE:
+“This will be a day long remembered. It has seen the end of Kenobi, and will soon see the end of the rebellion.”
 
 2. Edit the below quote using home row keys, word navigation(w) and insert:
 
 “What a piece if junk!”
-SHOULD BE: “What a piece of junk!”
+SHOULD BE:
+“What a piece of junk!”
 
-3.  Edit the below quote using the techniques you've learned, but combine word navigation with a number(4w).
+3.  Edit the below quote using the techniques you've learned, but combine word navigation with a number(7w).
 
-“Don’t call me a philosopher, you overweight glob of grease.”
-SHOULD BE: “Don’t call me a mindless philosopher, you overweight glob of grease.”
+“Mos Eisley spaceport. You will find a more wretched hive of scum and villainy.”
+SHOULD BE:
+“Mos Eisley spaceport. You will never find a more wretched hive of scum and villainy.”
 
 4.  Edit the below quote using end of word navigation(e) combined with a number (4e).
 
 “I’m Luke Skywalker, I’m here to rescux you.”
-SHOULD BE: “I’m Luke Skywalker, I’m here to rescue you.”
+SHOULD BE:
+“I’m Luke Skywalker, I’m here to rescue you.”
 
 5.  Edit the below quote using find navigation(f) to find the x(fx).
 
 “Watch your mouth kid, or you’ll find xourself floating home.”
-SHOULD BE: “Watch your mouth kid, or you’ll find yourself floating home.”
+SHOULD BE:
+“Watch your mouth kid, or you’ll find yourself floating home.”
 
 ********** ENTER INSERT MODE IN MANY WAYS **********
 
@@ -66,43 +73,142 @@ c - the change command
 6. Edit the below quote by finding the x(fx) and entering insert mode after the x char with a.
 
 “Evacuate in our moment of triumph? I thinx you overestimate their chances.”
-SHOULD BE: “Evacuate in our moment of triumph? I think you overestimate their chances.”
+SHOULD BE:
+“Evacuate in our moment of triumph? I think you overestimate their chances.”
 
+7. Navigate to the middle of the line with fC, f? or f -. Use command I to enter INSERT mode at the beginning of the line and add a quotation mark.  Use A to enter the quotation mark at the end of the line.
+
+If this is a consular ship, where is the ambassador? — Commander, tear this ship apart until you’ve found those plans. And bring me the passengers, I want them alive!
+SHOULD BE:
 “If this is a consular ship, where is the ambassador? — Commander, tear this ship apart until you’ve found those plans. And bring me the passengers, I want them alive!”
-“Look, good against remotes is one thing, good against the living, that’s something else.”
-“Aren’t you a little short for a stormtrooper?”
-“What are we going to do? We’ll be sent to the spice mines of Kessel and smashed into who knows what.”
-“That’s no moon, it’s a space station.”
-“This is some rescue. You came in here and you didn’t have a plan for getting out?”
-“He’s the brains, sweetheart!”
 
-
-“You just watch yourself. We’re wanted men. I have the death sentence on 12 systems.”
-“I’ll be careful.”
-
+8. Delete a singular character with the x command.  The character under the cursor will be deleted.
+“You’ll be deadd!”
+SHOULD BE:
 “You’ll be dead!”
 
-“Mos Eisley spaceport. You will never find a more wretched hive of scum and villainy.”
+9. Navigation with the / command. Type /Force and hit enter.  Use n to go the next match, use N to go to the previous match.
+
+10. Turn on line numbers with :set number.  You can navigate to any line in the file with <number>G in normal mode or :<number> in command mode.  Navigate to the next step with this method.
+
+********** USE VISUAL MODE TO DELETE A WORD **********
+11. Delete the unnecessary word by using the v command to enter VISUAL mode, using home row keys (hjkl) to expand the selection, and the d command to delete.
+
+“Look, good against these lazy remotes is one thing, good against the living, that’s something else.”
+SHOULD BE:
+“Look, good against remotes is one thing, good against the living, that’s something else.”
+
+12. Use the change(c) command to enter INSERT mode after using VISUAL mode to replace a word.
+“Into the garbage chute, numbskull!”
+SHOULD BE:
 “Into the garbage chute, flyboy!”
-“This is Red 5, I’m going in.”
-“Boring conversation anyway. Luke, we’re gonna have company!”
-“The Force is strong with this one.”
 
-“I suggest a new strategy, R2. Let the wookiee win.”
-“I’m a member of the Imperial Senate on a diplomatic mission to Alderaan.”
-“You are part of the Rebel Alliance and a traitor. Take her away!”
+********** USE YANK AND PASTE TO COPY AND PASTE **********
+13. Copy the word "stormtrooper" by using visual mode to highlite it and the yank(y) command to copy it. Use the paste(p) command to paste it after navigating to the appropriate position.
 
-“You’re all clear, kid! Now let’s blow this thing and go home!”
+“Aren’t you a little short for a ?”
+SHOULD BE:
+“Aren’t you a little short for a stormtrooper?”
+
+14. Use the yank line(yy) command to copy an entire line, use the paste(p) command to paste the line in the appropriate place.
+“What are we going to do?"
+SHOULD BE:
+“What are we going to do?"
+"We’ll be sent to the spice mines of Kessel and smashed into who knows what.”
+
+15. Use the delete line(dd) command to delete an entire line.
+“That’s no moon, it’s a space station.”
+“That’s no moon, it’s a space station.”
+SHOULD BE:
+“That’s no moon, it’s a space station.”
+
+16.  Use the delete line(dd) command to remove the out of order line, and use the paste(p) command to paste it at the appropriate place.
+Luke, we’re gonna have company!”
+“Boring conversation anyway.
+SHOULD BE:
+“Boring conversation anyway.
+Luke, we’re gonna have company!”
+
+17. Use the substitute(s) command in command mode to change a word.  Type :s/life/death/ when positioned on the line with the word life.
+“You just watch yourself. We’re wanted men. I have the life sentence on 12 systems.”
+SHOULD BE:
+“You just watch yourself. We’re wanted men. I have the death sentence on 12 systems.”
+
+18. Use the substitute command again to substitute all x with s.  You need to use the global modifier (g) after your command. :s/x/s/g
+
+“Thexe blaxt pointx — too accurate for xandpeople. Only imperial xtormtrooperx are xo precixe.”
+SHOULD BE:
 “These blast points — too accurate for sandpeople. Only imperial stormtroopers are so precise.”
-“I’ve got a very bad feeling about this.”
-“You’ve never heard of the Millennium Falcon? … It’s the ship that made the Kessel run in less than 12 parsecs.”
-Star Wars: 30 Most Memorable Star Wars Quotes
+
+19. You can use the repeat command(.) to repeat your last action.  Delete a line(dd) and then use the repeat command(.) to delete some more.
+“This is some rescue.
+“This is some rescue.
+“This is some rescue.
+“This is some rescue.
+You came in here and you didn’t have a plan for getting out?”
+SHOULD BE:
+“This is some rescue.
+You came in here and you didn’t have a plan for getting out?”
+
+********** REPLACE **********
+20. The replace(r) command in NORMAL mode allows you to replace a single character.  Replace the 6 below with r5.
+“This is Red 6, I’m going in.”
+SHOULD BE:
+“This is Red 5, I’m going in.”
+
+********** FILE NAVIGATION **********
+21. Save this file as a different name using the write(:w) command.
+* Use the edit(:e .) command in command mode with an argument of '.' to enter the file system.
+* Navigate the file system with the same navigation commands we've learned earlier (hjkl, etc) and choose a file with return.
+
+22. Use the list comannd (:ls) to list all the open buffers.  A buffer is a file that you have previously opened.
+* Choose the original file by using the buffer command (:b <number>) with the number you saw listed with :ls
+* Choose a different file from the buffer list by name, (:b <name_of_file>).
+
+23. There are a couple of special commands in NORMAL mode to move to previous files or locations.
+* ctrl-o will move you back in the jump list
+* ctrl-i will move you forward in the jump list
+* ctrl-6 will open the previous file you had open.
+
+24. When you opened vim, the directory you opened from will be the parent directory.  To see that directory use the current dir(:pwd) command in command mode.
+
+25. Open a file with the edit command (:e <path to file>)
+
+********** COMPOSABLE COMMANDS AKA MOTIONS **********
+
+All the commands learned above(plus more!) can be composed to create shorter and quicker edits.
+
+26. Edit the following by using a delete command combined with the find command (dfX)
+
+"Here is a bunch of text that doesn't belongXHe’s the brains, sweetheart!”
+SHOULD BE:
+“He’s the brains, sweetheart!”
+
+27. We can try the same thing but combine the delete command with the 0 command (d0).  You're cursor should be to the right of the X for this.
+"Here is a bunch of text that doesn't belongXHe’s the brains, sweetheart!”
+SHOULD BE:
+“He’s the brains, sweetheart!”
+
+********** AUTOCOMPLETION **********
+28. Use ctrl-n in insert mode to complete words or list possible completions.  For instance typing: Imp<ctrl-n> will autocomplete Imperial for you.
+“I’m a member of the Senate on a mission to Alderaan.”
+SHOULD BE:
+“I’m a member of the Imperial Senate on a diplomatic mission to Alderaan.”
+
+********** RESOURCES **********
+
+Vimcasts has many many screencasts covering simple concepts, plugins and deep features.  Plus his voice is golden.
+http://vimcasts.org/
+He's also got a great book.
+http://pragprog.com/book/dnvim/practical-vim
+Vim golf is a great way to sharpen your vim skills and learn new tricks.
+http://www.vimgolf.com/
+Tim Pope is the most prolific plugin author in the world.  He's written many useful plugins and many necessary plugins.
+https://github.com/tpope?tab=repositories
+If you want to be a badass Vimscript programmer like Tim Pope, the best way to start is with Learn Vimscript the Hard Way.
+http://learnvimscriptthehardway.stevelosh.com/
+
+********** FINAL THOUGHTS **********
 
 “When I left you, I was but the learner, now I am the master.”
-“Only a master of evil, Darth.”
-
-“I find your lack of faith disturbing.”
-“Use the Force, Luke.”
-“You don’t need to see his identification … These aren’t the droids you’re looking for … He can go about his business … Move along.”
-“Help me Obi-Wan Kenobi. You’re my only hope.”
 “May the Force be with you.”
