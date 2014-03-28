@@ -1,0 +1,32 @@
+"Turns on syntax highlighting for known filetypes
+syntax enable
+"Show on the bottom line which mode you are in
+set showmode
+"tab completion in command mode
+set wildmenu
+"Indenting of new line is based on previous line
+set autoindent
+"Convert tabs to spaces
+set expandtab
+"Turn off line wrapping
+set nowrap
+"Turn on highlited search
+set hlsearch
+"Let vim show you your matching chars: () {} []
+set showmatch
+set ignorecase
+set smartcase
+"set spellcheck to english
+set spelllang=en_us
+"turn on line numbers
+set number
+"turn colors from 16 to 256
+set t_Co=256
+set encoding=utf-8
+set history=1000
+"turn status line on for all cases
+set laststatus=2
+"display hidden whitespace as special chars
+set list listchars=tab:>-,trail:.
+"set tab width in spaces
+set sw=2 ts=2 sts=2
