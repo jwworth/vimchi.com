@@ -1,4 +1,3 @@
-
 Just relax, concentrate. Vim commands are strange and powerful and may leave you momentarily frustrated.  If you can get back to NORMAL mode, you can use the undo command(u) to get you back to a place you feel comfortable.
 
 Take Deep Breathes and repeat:
@@ -28,6 +27,14 @@ gg - returns you to the beginning of the file.
 Start each excersize below by navigating to the start of the line(0) you would like to edit.
 
 Save early, save often.  Use the write command in command mode to save this file (:write or :w)
+
+**********CONFIGURATION**********
+
+The configuration for vim is stored in a file named .vimrc in your home directory.  If you'd like a .vimrc to start with, use http://vimchi.com/beginners-vimrc.txt. To grab it, do this:
+
+:!curl -o ~/.vimrc http://vimchi.com/beginners-vimrc.txt
+
+In order for the settings in that file to take affect, quit vim (:q) and then come back in.
 
 **********NAVIGATION**********
 
