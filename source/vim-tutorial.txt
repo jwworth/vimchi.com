@@ -83,7 +83,7 @@ c - the change command
 SHOULD BE:
 "Evacuate in our moment of triumph? I think you overestimate their chances."
 
-7. Navigate to the middle of the line with fC, f? or f -. Use command I to enter INSERT mode at the beginning of the line and add a quotation mark.  Use A to enter the quotation mark at the end of the line.
+7. Navigate to the middle of the line with fC, f? or f -. Use shift + i to enter INSERT mode at the beginning of the line and add a quotation mark.  Use A to enter the quotation mark at the end of the line.
 
 If this is a consular ship, where is the ambassador? - Commander, tear this ship apart until you've found those plans. And bring me the passengers, I want them alive!
 SHOULD BE:
