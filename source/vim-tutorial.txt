@@ -24,7 +24,7 @@ hjkl - function like arrow keys
 gg - returns you to the beginning of the file.
 { and } - navigate down and up to the next blank line.
 
-Start each excersize below by navigating to the start of the line(0) you would like to edit.
+Start each exercise below by navigating to the start of the line(0) you would like to edit.
 
 Save early, save often.  Use the write command in command mode to save this file (:write or :w)
 
