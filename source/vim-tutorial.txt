@@ -168,7 +168,7 @@ SHOULD BE:
 * Use the edit(:e .) command in command mode with an argument of '.' to enter the file system.
 * Navigate the file system with the same navigation commands we've learned earlier (hjkl, etc) and choose a file with return.
 
-22. Use the list comannd (:ls) to list all the open buffers.  A buffer is a file that you have previously opened.
+22. Use the list command (:ls) to list all the open buffers.  A buffer is a file that you have previously opened.
 * Choose the original file by using the buffer command (:b <number>) with the number you saw listed with :ls
 * Choose a different file from the buffer list by name, (:b <name_of_file>).
 
