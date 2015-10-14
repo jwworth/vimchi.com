@@ -111,7 +111,7 @@ SHOULD BE:
 "Into the garbage chute, flyboy!"
 
 ********** USE YANK AND PASTE TO COPY AND PASTE **********
-13. Copy the word "stormtrooper" by using visual mode to highlite it and the yank(y) command to copy it. Use the paste(p) command to paste it after navigating to the appropriate position.
+13. Copy the word "stormtrooper" by using visual mode to highlight it and the yank(y) command to copy it. Use the paste(p) command to paste it after navigating to the appropriate position.
 
 "Aren't you a little short for a ?"
 SHOULD BE:
