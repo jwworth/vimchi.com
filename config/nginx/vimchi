@@ -1,0 +1,23 @@
+server {
+        listen *:80;
+        server_name vimchi.com;
+
+        root /var/www;
+        index index.html index.htm;
+
+        charset UTF-8;
+
+        gzip on;
+        gzip_proxied any;
+        gzip_static on;
+        gzip_vary on;
+        gzip_types text/plain text/css application/json application/javascript application/x-javascript text/javascript text/xml application/xml application/rss+xml application/atom+xml application/rdf+xml;
+
+    location ~* \.(html)$ {
+      add_header Cache-Control "max-age=0, must-revalidate";
+    }
+
+    location ~* \.(css|js)$ {
+      add_header Cache-Control "max-age=2592000, public";
+    }
+}
