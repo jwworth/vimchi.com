@@ -10,7 +10,7 @@ http://vimchi.com/
 Follow these steps:
 
 ```
-$ git clone https://github.com/jwworth/vimchi.com
+$ git clone https://github.com/hashrocket/vimchi.com
 $ cd vimchi.com
 $ middleman server
 ```
